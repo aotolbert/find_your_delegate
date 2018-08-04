@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Your Senator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="row mt-3 text-center">
+            <h2 class="text-center mr-auto ml-auto">Select your state to find your senators</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 border rounded">
+
+                    <div class="form-group">
+                            <label for="state" class="col-sm-2 control-label">State</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="state" name="state">
+                                    <option value="">N/A</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DC">District of Columbia</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NY">New York</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="PR">Puerto Rico</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+                        </div>
+
+            </div>
+            <div class="col-sm-8 ml-3 border rounded" id="table">
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var AK = ["Lisa Murkowski", "Republican", "May 22, 1957", "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Lisa_Murkowski_official_photo.jpg/220px-Lisa_Murkowski_official_photo.jpg", "https://www.murkowski.senate.gov/", "Dan Sullivan", "Republican", "November 13, 1964", "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Senator_Dan_Sullivan_official.jpg/220px-Senator_Dan_Sullivan_official.jpg", "https://www.sullivan.senate.gov/"];
+
+var AL = ["Richard Shelby", "Republican", "May 6, 1934", "http://media.al.com/news_impact/photo/richard-shelby-mugjpg-785ec02a1375ea78.jpg", "https://www.shelby.senate.gov/public/", "Doug Jones", "Democrat", "May 4, 1954", "https://starsinforme-cyberpanthers.netdna-ssl.com/wp-content/uploads/2017/11/Doug-Jones.jpg", "https://www.jones.senate.gov/HomePage"];
+
+var AZ = ["John McCain", "Republican", "August 29, 1936", "https://az620379.vo.msecnd.net/images/Contracts/748e1f0f-5820-4c69-8642-555485126a2b.png", "https://www.mccain.senate.gov/public/", "Jeff Flake", "Republican", "December 31, 1962", "https://az620379.vo.msecnd.net/images/Contracts/8a3c8eb2-c8a5-4409-9262-4059802515d3.png", "https://www.flake.senate.gov/public/"];
+
+
+$("#state").on("click", function(event) { 
+
+var response;
+
+response = state.value;
+
+
+
+if (response === "AK") {
+
+    var newstate = $("<div>");
+
+    var firstdiv = $("<div>");
+
+    firstdiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AK[3] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AK[0] + '</div><div class="col-sm-2 mt-5">Party: ' + AK[1] + '</div><div class="col-sm-4 mt-5">Born: ' + AK[2] + '</div><div class="col-sm-1 mt-5"><a href="' + AK[4] + '">Link</a></div></div>');
+
+    $(newstate).append(firstdiv);
+
+     var seconddiv = $("<div>");
+
+    seconddiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AK[8] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AK[5] + '</div><div class="col-sm-2 mt-5">Party: ' + AK[6] + '</div><div class="col-sm-4 mt-5">Born: ' + AK[7] + '</div><div class="col-sm-1 mt-5"><a href="' + AK[9] + '">Link</a></div></div>')
+
+    $(newstate).append(seconddiv);
+
+    $("#table").html(newstate);
+}
+
+
+
+else if (response === "AL") {
+
+    var newstate = $("<div>");
+
+    var firstdiv = $("<div>");
+
+        firstdiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AL[3] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AL[0] + '</div><div class="col-sm-2 mt-5">Party: ' + AL[1] + '</div><div class="col-sm-4 mt-5">Born: ' + AL[2] + '</div><div class="col-sm-1 mt-5"><a href="' + AL[4] + '">Link</a></div></div>');
+    
+        $(newstate).append(firstdiv);
+
+         var seconddiv = $("<div>");
+
+        seconddiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AL[8] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AL[5] + '</div><div class="col-sm-2 mt-5">Party: ' + AL[6] + '</div><div class="col-sm-4 mt-5">Born: ' + AL[7] + '</div><div class="col-sm-1 mt-5"><a href="' + AL[9] + '">Link</a></div></div>')
+
+        $(newstate).append(seconddiv);
+
+        $("#table").html(newstate);
+}
+
+else if (response === "AZ") {
+
+var newstate = $("<div>");
+
+var firstdiv = $("<div>");
+
+    firstdiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AZ[3] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AZ[0] + '</div><div class="col-sm-2 mt-5">Party: ' + AZ[1] + '</div><div class="col-sm-4 mt-5">Born: ' + AZ[2] + '</div><div class="col-sm-1 mt-5"><a href="' + AZ[4] + '">Link</a></div></div>');
+
+    $(newstate).append(firstdiv);
+
+     var seconddiv = $("<div>");
+
+    seconddiv.html('<div class="row mt-2 mb-2" style="height: 150px"><div class="col-sm-3"><img src="' + AZ[8] + '" class="h-100 w-100 ml-auto mr-auto"></div><div class="col-sm-2 mt-5">' + AZ[5] + '</div><div class="col-sm-2 mt-5">Party: ' + AZ[6] + '</div><div class="col-sm-4 mt-5">Born: ' + AZ[7] + '</div><div class="col-sm-1 mt-5"><a href="' + AZ[9] + '">Link</a></div></div>')
+
+    $(newstate).append(seconddiv);
+
+    $("#table").html(newstate);
+}
+
+
+
+
+});
+
+</script>
+    
+</body>
+</html>
